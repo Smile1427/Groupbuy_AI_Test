@@ -33,24 +33,41 @@
 ## 项目结构
 ```
 groupbuy-project/
-├── frontend/ # 被测系统：拼团H5
-│ ├── index.html # 商品列表页
-│ ├── detail.html # 商品详情页
-│ └── style.css # 样式文件
-├── aitest/ # AI测试平台
-│ ├── core/ # 测试核心模块
-│ │ ├── ai_generator.py # AI生成测试代码
-│ │ ├── test_runner.py # 测试执行引擎
-│ │ └── locator_repair.py # 定位器自动修复
-│ ├── test_cases/ # 测试用例（YAML）
-│ ├── generated_tests/ # AI生成的测试代码
-│ ├── reports/ # 测试报告
-│ ├── postman/ # Postman测试集合
-│ └── main.py # 主入口
-├── backend/ # Mock服务
-│ └── db.json # Mock数据
-├── BUGS.md # 缺陷报告
-└── README.md # 项目说明
+├── frontend/                          # 被测系统：拼团前端页面
+│   ├── index.html                     # 商品列表页
+│   ├── detail.html                    # 商品详情页
+│   └── style.css                      # 样式文件
+│
+├── backend/                           # Mock服务
+│   └── db.json                        # Mock数据
+│
+├── aitest/                            # AI测试平台
+│   ├── core/                          # 测试核心模块
+│   │   ├── ai_generator.py            # AI生成测试代码
+│   │   ├── test_runner.py             # 测试执行引擎
+│   │   └── locator_repair.py          # 定位器自动修复
+│   ├── test_cases/                    # 测试用例（YAML）
+│   │   ├── all_cases.yaml             # 完整测试用例（40个）
+│   │   └── groupbuy.yaml              # 基础测试用例
+│   ├── postman/                       # Postman测试集合
+│   │   └── API_Tests.json             # API测试用例（15个）
+│   ├── reports/                       # 测试报告目录
+│   │   ├── allure_report/             # Allure报告
+│   │   ├── coverage/                  # 覆盖率报告
+│   │   ├── screenshots/               # 测试截图
+│   │   ├── performance_report.html    # 性能测试报告
+│   │   └── summary_*.html             # 功能测试汇总报告
+│   ├── generated_tests/               # AI生成的测试代码（运行后生成）
+│   ├── config.py                      # 配置文件（API密钥等）
+│   ├── main.py                        # 主入口
+│   ├── simple_generator.py            # 测试代码生成器
+│   ├── performance_test.py            # 性能测试脚本
+│   ├── run_performance_test.py        # 性能测试启动脚本
+│   └── requirements.txt               # Python依赖
+│
+├── .gitignore                         # Git忽略文件
+├── BUGS.md                            # 缺陷报告
+└── README.md                          # 项目说明
 ```
 
 
