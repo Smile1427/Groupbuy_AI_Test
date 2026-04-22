@@ -1,0 +1,4 @@
+✅ 预期异常处理正常: Page.goto: net::ERR_INTERNET_DISCONNECTED at http://localhost:8001/index.html
+Call log:
+  - navigating to "http://localhost:8001/index.html", waiting until "load"
+

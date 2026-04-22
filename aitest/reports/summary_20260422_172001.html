@@ -1,0 +1,319 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>测试报告汇总</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1 { color: #333; }
+        .summary { background: #f0f0f0; padding: 15px; border-radius: 5px; margin-bottom: 20px; }
+        .pass { color: green; }
+        .fail { color: red; }
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #4CAF50; color: white; }
+        tr:nth-child(even) { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+    <h1>拼团H5自动化测试报告</h1>
+    <div class="summary">
+        <p><strong>执行时间:</strong> 20260422_172001</p>
+        <p><strong>目标URL:</strong> http://localhost:8001/index.html</p>
+        <p><strong>总用例数:</strong> 40</p>
+        <p><strong class="pass">通过:</strong> 40</p>
+        <p><strong class="fail">失败:</strong> 0</p>
+        <p><strong>通过率:</strong> 100.0%</p>
+    </div>
+    <h2>详细结果</h2>
+    <table>
+        <thead>
+            <tr><th>序号</th><th>用例名称</th><th>类型</th><th>状态</th><th>耗时(秒)</th></tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <td>1</td>
+                <td>列表页-正常加载</td>
+                <td>normal</td>
+                <td class="pass">✅ 通过</td>
+                <td>12.0</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>列表页-商品数量验证</td>
+                <td>normal</td>
+                <td class="pass">✅ 通过</td>
+                <td>8.04</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>列表页-拼团价显示</td>
+                <td>normal</td>
+                <td class="pass">✅ 通过</td>
+                <td>7.48</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>列表页-原价显示</td>
+                <td>normal</td>
+                <td class="pass">✅ 通过</td>
+                <td>7.25</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>列表页-拼团标签</td>
+                <td>normal</td>
+                <td class="pass">✅ 通过</td>
+                <td>6.97</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>列表页-点击商品跳转</td>
+                <td>normal</td>
+                <td class="pass">✅ 通过</td>
+                <td>7.36</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>列表页-无效商品处理</td>
+                <td>exception</td>
+                <td class="pass">✅ 通过</td>
+                <td>8.66</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>列表页-快速连续点击</td>
+                <td>boundary</td>
+                <td class="pass">✅ 通过</td>
+                <td>10.25</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>列表页-返回刷新</td>
+                <td>combined</td>
+                <td class="pass">✅ 通过</td>
+                <td>9.41</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>列表页-滚动加载</td>
+                <td>boundary</td>
+                <td class="pass">✅ 通过</td>
+                <td>6.78</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>详情页-正常显示</td>
+                <td>normal</td>
+                <td class="pass">✅ 通过</td>
+                <td>7.32</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>详情页-无效商品ID</td>
+                <td>exception</td>
+                <td class="pass">✅ 通过</td>
+                <td>8.48</td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>详情页-无ID参数</td>
+                <td>exception</td>
+                <td class="pass">✅ 通过</td>
+                <td>8.44</td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>详情页-特殊字符ID</td>
+                <td>exception</td>
+                <td class="pass">✅ 通过</td>
+                <td>6.81</td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td>详情页-负数ID</td>
+                <td>exception</td>
+                <td class="pass">✅ 通过</td>
+                <td>6.79</td>
+            </tr>
+            <tr>
+                <td>16</td>
+                <td>详情页-开团按钮初始状态</td>
+                <td>normal</td>
+                <td class="pass">✅ 通过</td>
+                <td>7.59</td>
+            </tr>
+            <tr>
+                <td>17</td>
+                <td>详情页-已开团状态显示</td>
+                <td>combined</td>
+                <td class="pass">✅ 通过</td>
+                <td>6.79</td>
+            </tr>
+            <tr>
+                <td>18</td>
+                <td>详情页-已成团状态显示</td>
+                <td>combined</td>
+                <td class="pass">✅ 通过</td>
+                <td>6.79</td>
+            </tr>
+            <tr>
+                <td>19</td>
+                <td>详情页-已过期状态显示</td>
+                <td>combined</td>
+                <td class="pass">✅ 通过</td>
+                <td>6.76</td>
+            </tr>
+            <tr>
+                <td>20</td>
+                <td>详情页-多次开团</td>
+                <td>boundary</td>
+                <td class="pass">✅ 通过</td>
+                <td>6.91</td>
+            </tr>
+            <tr>
+                <td>21</td>
+                <td>详情页-切换不同商品</td>
+                <td>combined</td>
+                <td class="pass">✅ 通过</td>
+                <td>6.7</td>
+            </tr>
+            <tr>
+                <td>22</td>
+                <td>详情页-刷新后状态保持</td>
+                <td>combined</td>
+                <td class="pass">✅ 通过</td>
+                <td>6.76</td>
+            </tr>
+            <tr>
+                <td>23</td>
+                <td>拼团-正常开团</td>
+                <td>normal</td>
+                <td class="pass">✅ 通过</td>
+                <td>7.4</td>
+            </tr>
+            <tr>
+                <td>24</td>
+                <td>拼团-倒计时格式</td>
+                <td>normal</td>
+                <td class="pass">✅ 通过</td>
+                <td>11.97</td>
+            </tr>
+            <tr>
+                <td>25</td>
+                <td>拼团-倒计时递减</td>
+                <td>normal</td>
+                <td class="pass">✅ 通过</td>
+                <td>11.96</td>
+            </tr>
+            <tr>
+                <td>26</td>
+                <td>拼团-倒计时归零</td>
+                <td>boundary</td>
+                <td class="pass">✅ 通过</td>
+                <td>12.18</td>
+            </tr>
+            <tr>
+                <td>27</td>
+                <td>拼团-模拟成功</td>
+                <td>normal</td>
+                <td class="pass">✅ 通过</td>
+                <td>7.41</td>
+            </tr>
+            <tr>
+                <td>28</td>
+                <td>拼团-过期后重新开团</td>
+                <td>combined</td>
+                <td class="pass">✅ 通过</td>
+                <td>15.08</td>
+            </tr>
+            <tr>
+                <td>29</td>
+                <td>拼团-不同商品独立存储</td>
+                <td>combined</td>
+                <td class="pass">✅ 通过</td>
+                <td>6.9</td>
+            </tr>
+            <tr>
+                <td>30</td>
+                <td>拼团-页面关闭后状态保持</td>
+                <td>combined</td>
+                <td class="pass">✅ 通过</td>
+                <td>6.92</td>
+            </tr>
+            <tr>
+                <td>31</td>
+                <td>拼团-连续开团成功</td>
+                <td>boundary</td>
+                <td class="pass">✅ 通过</td>
+                <td>10.05</td>
+            </tr>
+            <tr>
+                <td>32</td>
+                <td>拼团-清除localStorage后重置</td>
+                <td>boundary</td>
+                <td class="pass">✅ 通过</td>
+                <td>6.37</td>
+            </tr>
+            <tr>
+                <td>33</td>
+                <td>网络断开-列表页访问</td>
+                <td>exception</td>
+                <td class="pass">✅ 通过</td>
+                <td>8.62</td>
+            </tr>
+            <tr>
+                <td>34</td>
+                <td>网络断开-详情页访问</td>
+                <td>exception</td>
+                <td class="pass">✅ 通过</td>
+                <td>6.67</td>
+            </tr>
+            <tr>
+                <td>35</td>
+                <td>网络恢复-正常访问</td>
+                <td>exception</td>
+                <td class="pass">✅ 通过</td>
+                <td>7.0</td>
+            </tr>
+            <tr>
+                <td>36</td>
+                <td>弱网-图片加载</td>
+                <td>performance</td>
+                <td class="pass">✅ 通过</td>
+                <td>6.35</td>
+            </tr>
+            <tr>
+                <td>37</td>
+                <td>快速切换页面</td>
+                <td>performance</td>
+                <td class="pass">✅ 通过</td>
+                <td>9.91</td>
+            </tr>
+            <tr>
+                <td>38</td>
+                <td>同一商品同时开团</td>
+                <td>performance</td>
+                <td class="pass">✅ 通过</td>
+                <td>6.49</td>
+            </tr>
+            <tr>
+                <td>39</td>
+                <td>localStorage满</td>
+                <td>exception</td>
+                <td class="pass">✅ 通过</td>
+                <td>6.68</td>
+            </tr>
+            <tr>
+                <td>40</td>
+                <td>内存泄漏检查</td>
+                <td>performance</td>
+                <td class="pass">✅ 通过</td>
+                <td>6.7</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

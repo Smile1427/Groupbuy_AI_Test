@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>拼团购 - 商品列表</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="goods-list" id="goodsList"></div>
+
+    <script>
+        // Mock商品数据
+        const goodsData = [
+            { id: 1, name: "新疆阿克苏苹果 5斤装", groupPrice: 29.9, originalPrice: 59, img: "🍎" },
+            { id: 2, name: "泰国金枕头榴莲 3-4斤", groupPrice: 89.9, originalPrice: 159, img: "榴莲" },
+            { id: 3, name: "进口车厘子 JJ级 2斤", groupPrice: 69.9, originalPrice: 129, img: "🍒" }
+        ];
+
+        function renderGoodsList() {
+            const container = document.getElementById('goodsList');
+            container.innerHTML = goodsData.map(goods => `
+                <div class="goods-card" onclick="goToDetail(${goods.id})">
+                    <div class="goods-img">${goods.img}</div>
+                    <div class="goods-info">
+                        <div class="goods-name">${goods.name}</div>
+                        <div class="price-row">
+                            <span class="group-price">${goods.groupPrice}</span>
+                            <span class="original-price">¥${goods.originalPrice}</span>
+                        </div>
+                        <span class="group-tag">👥 2人成团</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function goToDetail(id) {
+            window.location.href = `detail.html?id=${id}`;
+        }
+
+        renderGoodsList();
+    </script>
+</body>
+</html>

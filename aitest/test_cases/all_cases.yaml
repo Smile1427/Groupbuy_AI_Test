@@ -1,0 +1,167 @@
+name: 拼团H5完整测试套件
+url: http://localhost:8001/index.html
+
+cases:
+  # ========== 商品列表页测试（10个）==========
+  - name: 列表页-正常加载
+    type: normal
+    text: 打开商品列表页，验证页面能正常加载，三个商品都显示
+
+  - name: 列表页-商品数量验证
+    type: normal
+    text: 打开列表页，验证商品数量为3个
+
+  - name: 列表页-拼团价显示
+    type: normal
+    text: 打开列表页，验证每个商品都有拼团价显示
+
+  - name: 列表页-原价显示
+    type: normal
+    text: 打开列表页，验证每个商品都有原价显示（划掉样式）
+
+  - name: 列表页-拼团标签
+    type: normal
+    text: 打开列表页，验证每个商品都有"2人成团"标签
+
+  - name: 列表页-点击商品跳转
+    type: normal
+    text: 点击第一个商品，验证成功跳转到详情页，URL包含正确的id参数
+
+  - name: 列表页-无效商品处理
+    type: exception
+    text: 模拟商品数据为空的情况，验证页面显示空状态提示
+
+  - name: 列表页-快速连续点击
+    type: boundary
+    text: 快速连续点击多个商品，验证不会重复跳转或崩溃
+
+  - name: 列表页-返回刷新
+    type: combined
+    text: 进入详情页后返回列表页，验证列表数据仍然正常显示
+
+  - name: 列表页-滚动加载
+    type: boundary
+    text: 滚动页面到底部，验证不会出现JavaScript错误
+
+  # ========== 商品详情页测试（12个）==========
+  - name: 详情页-正常显示
+    type: normal
+    text: 进入商品详情页，验证商品名称、价格、拼团按钮都正常显示
+
+  - name: 详情页-无效商品ID
+    type: exception
+    text: 访问不存在的商品ID（如id=999），验证页面提示"商品不存在"并返回列表
+
+  - name: 详情页-无ID参数
+    type: exception
+    text: 访问不带id参数的详情页，验证自动跳回列表页
+
+  - name: 详情页-特殊字符ID
+    type: exception
+    text: 访问id=abc的特殊字符，验证页面不会崩溃
+
+  - name: 详情页-负数ID
+    type: exception
+    text: 访问id=-1，验证页面正确处理
+
+  - name: 详情页-开团按钮初始状态
+    type: normal
+    text: 未开团时，验证按钮显示"我要开团"
+
+  - name: 详情页-已开团状态显示
+    type: combined
+    text: 开团后刷新页面，验证按钮变成"模拟拼团成功"，倒计时显示
+
+  - name: 详情页-已成团状态显示
+    type: combined
+    text: 点击"模拟拼团成功"后，验证按钮变成灰色"已成团"
+
+  - name: 详情页-已过期状态显示
+    type: combined
+    text: 等待拼团过期后，验证按钮变成"重新开团"
+
+  - name: 详情页-多次开团
+    type: boundary
+    text: 开团后再次点击开团按钮，验证不会重复创建拼团
+
+  - name: 详情页-切换不同商品
+    type: combined
+    text: 从商品A详情页跳转到商品B，验证数据显示为商品B的信息
+
+  - name: 详情页-刷新后状态保持
+    type: combined
+    text: 开团后刷新页面，验证拼团状态和倒计时保持不变
+
+  # ========== 拼团功能测试（10个）==========
+  - name: 拼团-正常开团
+    type: normal
+    text: 点击"我要开团"，验证出现倒计时，localStorage中有记录
+
+  - name: 拼团-倒计时格式
+    type: normal
+    text: 开团后，验证倒计时显示格式为"分:秒"
+
+  - name: 拼团-倒计时递减
+    type: normal
+    text: 开团后，等待5秒，验证倒计时数字正确递减
+
+  - name: 拼团-倒计时归零
+    type: boundary
+    text: 等待倒计时结束（或等待2分钟），验证状态变为"已过期"
+
+  - name: 拼团-模拟成功
+    type: normal
+    text: 开团后点击"模拟拼团成功"，验证状态变为"已成团"
+
+  - name: 拼团-过期后重新开团
+    type: combined
+    text: 拼团过期后点击"重新开团"，验证成功创建新拼团
+
+  - name: 拼团-不同商品独立存储
+    type: combined
+    text: 商品A开团，商品B未开团，验证两个商品状态互不影响
+
+  - name: 拼团-页面关闭后状态保持
+    type: combined
+    text: 开团后关闭页面再重新打开，验证状态和倒计时仍然保持
+
+  - name: 拼团-连续开团成功
+    type: boundary
+    text: 开团→成功→再开团，验证流程正常
+
+  - name: 拼团-清除localStorage后重置
+    type: boundary
+    text: 开团后清除localStorage，刷新页面验证状态重置为未开团
+
+  # ========== 边界和异常测试（8个）==========
+  - name: 网络断开-列表页访问
+    type: exception
+    text: 模拟网络断开，访问列表页，验证不会导致页面崩溃
+
+  - name: 网络断开-详情页访问
+    type: exception
+    text: 模拟网络断开，访问详情页，验证不会导致页面崩溃
+
+  - name: 网络恢复-正常访问
+    type: exception
+    text: 网络断开后恢复，刷新页面验证可正常操作
+
+  - name: 弱网-图片加载
+    type: performance
+    text: 模拟3G网络环境，验证页面能正常加载，图片懒加载生效
+
+  - name: 快速切换页面
+    type: performance
+    text: 快速在列表页和详情页之间切换，验证不会出现数据错乱
+
+  - name: 同一商品同时开团
+    type: performance
+    text: 快速多次点击"我要开团"，验证最终状态正确
+
+  - name: localStorage满
+    type: exception
+    text: 模拟localStorage存储空间满的情况，验证开团功能不会崩溃
+
+  - name: 内存泄漏检查
+    type: performance
+    text: 页面长时间运行（模拟），验证内存使用稳定
